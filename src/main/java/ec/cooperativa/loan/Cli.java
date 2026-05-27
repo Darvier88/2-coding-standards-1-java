@@ -4,8 +4,14 @@ import java.util.*;
 
 public class Cli {
     public static void main(String[] args) {
-        double income = 0, debt = 0, savings = 0;
-        int tenure = 0, age = 0, late = 0, deps = 0;
+        double income = 0;
+        double debt = 0;
+        double savings = 0;
+        int tenure = 0;
+        int age = 0;
+        int late = 0;
+        int deps = 0;
+
         String name = "Member";
         for (int i = 0; i < args.length; i++) {
            if (args[i].equals("--income")) {
