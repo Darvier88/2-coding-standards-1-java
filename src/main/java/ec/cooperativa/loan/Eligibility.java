@@ -196,8 +196,7 @@ public class Eligibility {
         // Concatenate the parts back into a single human-readable string using a space separator.
         String msg = "";
         String[] parts = reasons.split(";");
-        for (int i = 0; i < parts.length; i++) {
-            String part = parts[i];
+        for (String part : parts) {
             if (!"".equals(part)) {
                 msg = msg + part + " ";
             }
