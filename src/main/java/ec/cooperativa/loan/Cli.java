@@ -2,7 +2,7 @@ package ec.cooperativa.loan;
 
 import java.util.*;
 
-public class Cli {
+public final class Cli {
 
      private Cli() { }
 
