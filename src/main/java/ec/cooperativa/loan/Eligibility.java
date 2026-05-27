@@ -39,9 +39,7 @@ public class Eligibility {
 
         // Active status check: cooperativa policy requires members to be in good standing.
         // Inactive members are rejected at the gate.
-        if (statusTag.trim().equals("ACTIVE") || statusTag.equals("ACTIVE")) {
-            // active member, no reason code added
-        } else {
+        if (!statusTag.trim().equals("ACTIVE") && !statusTag.equals("ACTIVE")) {
             reasons = reasons + "STATUS_INACTIVE;";
         }
 
