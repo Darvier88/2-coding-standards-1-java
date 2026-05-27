@@ -39,7 +39,7 @@ public class Eligibility {
 
         // Active status check: cooperativa policy requires members to be in good standing.
         // Inactive members are rejected at the gate.
-        if (!statusTag.trim().equals("ACTIVE") && !statusTag.equals("ACTIVE")) {
+        if (!"ACTIVE".equals(statusTag.trim()) && !"ACTIVE".equals(statusTag)) {
             reasons = reasons + "STATUS_INACTIVE;";
         }
 
@@ -198,7 +198,7 @@ public class Eligibility {
         String[] parts = reasons.split(";");
         for (int i = 0; i < parts.length; i++) {
             String part = parts[i];
-            if (!part.equals("")) {
+            if (!"".equals(part)) {
                 msg = msg + part + " ";
             }
         }
