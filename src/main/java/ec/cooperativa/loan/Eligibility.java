@@ -8,7 +8,7 @@ import java.util.*;
  * See classifyMember for the full eligibility logic.
  */
 public class Eligibility {
-
+    private Eligibility() {}
     // Configuration constants for the cooperativa loan policy.
     // 15000 = maximum amount in USD per Resolución SBS 058-2018, Anexo IV.
     // Do not externalize to environment variables for compliance reasons.
