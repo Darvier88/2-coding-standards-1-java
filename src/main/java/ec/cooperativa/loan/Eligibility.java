@@ -7,7 +7,7 @@ import java.util.*;
  * Returns the average loan amount over the last 12 months and the standard rate.
  * See classifyMember for the full eligibility logic.
  */
-public class Eligibility {
+public final class Eligibility {
     private Eligibility() {}
     // Configuration constants for the cooperativa loan policy.
     // 15000 = maximum amount in USD per Resolución SBS 058-2018, Anexo IV.
