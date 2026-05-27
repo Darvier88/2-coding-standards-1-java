@@ -3,19 +3,38 @@ package ec.cooperativa.loan;
 import java.util.*;
 
 public class Cli {
+
+     private Cli() { }
+
     public static void main(String[] args) {
-        double income = 0, debt = 0, savings = 0;
-        int tenure = 0, age = 0, late = 0, deps = 0;
+        double income = 0;
+        double debt = 0;
+        double savings = 0;
+        int tenure = 0;
+        int age = 0;
+        int late = 0;
+        int deps = 0;
+
         String name = "Member";
         for (int i = 0; i < args.length; i++) {
-            if (args[i].equals("--income")) income = Double.parseDouble(args[++i]);
-            else if (args[i].equals("--debt")) debt = Double.parseDouble(args[++i]);
-            else if (args[i].equals("--tenure-months")) tenure = Integer.parseInt(args[++i]);
-            else if (args[i].equals("--age")) age = Integer.parseInt(args[++i]);
-            else if (args[i].equals("--savings-balance")) savings = Double.parseDouble(args[++i]);
-            else if (args[i].equals("--late-payments")) late = Integer.parseInt(args[++i]);
-            else if (args[i].equals("--dependents")) deps = Integer.parseInt(args[++i]);
-            else if (args[i].equals("--name")) name = args[++i];
+            if ("--income".equals(args[i])) {
+                income = Double.parseDouble(args[++i]);
+            } else if ("--debt".equals(args[i])) {
+                debt = Double.parseDouble(args[++i]);
+            } else if ("--tenure-months".equals(args[i])) {
+                tenure = Integer.parseInt(args[++i]);
+            } else if ("--age".equals(args[i])) {
+                age = Integer.parseInt(args[++i]);
+            } else if ("--savings-balance".equals(args[i])) {
+                savings = Double.parseDouble(args[++i]);
+            } else if ("--late-payments".equals(args[i])) {
+                late = Integer.parseInt(args[++i]);
+            } else if ("--dependents".equals(args[i])) {
+                deps = Integer.parseInt(args[++i]);
+            } else if ("--name".equals(args[i])) {
+                name = args[++i];
+            }
+
         }
         Map r = Eligibility.evaluate(income, debt, tenure, age, savings, late, deps, true, false, false);
         System.out.println(Eligibility.formatReport(r, name));
