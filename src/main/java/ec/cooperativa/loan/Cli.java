@@ -3,6 +3,9 @@ package ec.cooperativa.loan;
 import java.util.*;
 
 public class Cli {
+
+     private Cli() { }
+
     public static void main(String[] args) {
         double income = 0;
         double debt = 0;
