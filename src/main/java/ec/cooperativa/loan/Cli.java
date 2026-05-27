@@ -35,7 +35,7 @@ public class Cli {
                 name = args[++i];
             }
 
-
+        }
         Map r = Eligibility.evaluate(income, debt, tenure, age, savings, late, deps, true, false, false);
         System.out.println(Eligibility.formatReport(r, name));
     }
