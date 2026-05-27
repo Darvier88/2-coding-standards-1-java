@@ -14,23 +14,24 @@ public class Cli {
 
         String name = "Member";
         for (int i = 0; i < args.length; i++) {
-           if (args[i].equals("--income")) {
+            if ("--income".equals(args[i])) {
                 income = Double.parseDouble(args[++i]);
-            } else if (args[i].equals("--debt")) {
+            } else if ("--debt".equals(args[i])) {
                 debt = Double.parseDouble(args[++i]);
-            } else if (args[i].equals("--tenure-months")) {
+            } else if ("--tenure-months".equals(args[i])) {
                 tenure = Integer.parseInt(args[++i]);
-            } else if (args[i].equals("--age")) {
+            } else if ("--age".equals(args[i])) {
                 age = Integer.parseInt(args[++i]);
-            } else if (args[i].equals("--savings-balance")) {
+            } else if ("--savings-balance".equals(args[i])) {
                 savings = Double.parseDouble(args[++i]);
-            } else if (args[i].equals("--late-payments")) {
+            } else if ("--late-payments".equals(args[i])) {
                 late = Integer.parseInt(args[++i]);
-            } else if (args[i].equals("--dependents")) {
+            } else if ("--dependents".equals(args[i])) {
                 deps = Integer.parseInt(args[++i]);
-            } else if (args[i].equals("--name")) {
+            } else if ("--name".equals(args[i])) {
                 name = args[++i];
             }
+
 
         Map r = Eligibility.evaluate(income, debt, tenure, age, savings, late, deps, true, false, false);
         System.out.println(Eligibility.formatReport(r, name));
